@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name 
       t.string :image_url 
       t.string :savings_goal
+
+      t.timestamps null: false
     end 
   end
 end
