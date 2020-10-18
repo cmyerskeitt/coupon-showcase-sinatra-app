@@ -8,4 +8,5 @@ end
 
 #In order to send Patch and Delete I need this code:'use Rack::MethodOverride'
 
+use UsersController
 run ApplicationController

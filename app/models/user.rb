@@ -4,9 +4,3 @@ class User < ActiveRecord::Base
 end 
 
 
-
-Brand
-Amount  
-Expiration
-Description
-User_id 
