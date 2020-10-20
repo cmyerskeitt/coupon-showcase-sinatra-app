@@ -28,9 +28,17 @@ class UsersController < ApplicationController
         "users show page!"
     end 
 
-    #signup
     #signup route that renders signup form
+    get '/signup' do 
+        erb :'/users/signup'
+    end 
+
     #post signup route that receives params from user, creates user, logs them in 
+    post '/user' do 
+        @user = User.create(params)
+        session[:user_id] = @user.id 
+        redirect "/users/#{@user.id}"
+    end 
 
     #logout 
     #get logout route that clears the session hash 
