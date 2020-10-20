@@ -24,7 +24,14 @@ class UsersController < ApplicationController
 
     #user show route
     get '/users/:id' do 
+        binding.pry
         "users show page!"
     end 
 
+    #signup
+    #signup route that renders signup form
+    #post signup route that receives params from user, creates user, logs them in 
+
+    #logout 
+    #get logout route that clears the session hash 
 end 
