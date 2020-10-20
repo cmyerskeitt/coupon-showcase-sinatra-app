@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         #find the user
         user = User.find_by(email: params[:email])
         #authenticate the user 
+        # binding.pry 
        if user && user.authenticate(params[:password])
             #creating a key/value pair in the session hash using the user id to log them in 
             session[:user_id] = user.id 
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
     #user show route
     get '/users/:id' do 
         @user = User.find_by(id: params[:id])
+        # binding.pry 
         erb :'/users/show'
     end 
 
