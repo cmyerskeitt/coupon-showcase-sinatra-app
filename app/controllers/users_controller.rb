@@ -40,6 +40,12 @@ class UsersController < ApplicationController
         redirect "/users/#{@user.id}"
     end 
 
-    #logout 
+   
     #get logout route that clears the session hash 
+    get '/logout' do 
+        session.clear
+        redirect '/'
+    end 
+
 end 
+
