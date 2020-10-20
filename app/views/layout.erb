@@ -14,7 +14,17 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+
     <div class="wrapper">
+
+    <div class="navi">
+      <%if logged_in? %>
+        <a href="/">Coupon Showcase</a>
+        <br>
+        <a href="/">New Coupon Showcase</a>
+        <br>
+        <a href="/logout">Log Out</a>
+      <% end %>
 
         <%= yield %>
 
