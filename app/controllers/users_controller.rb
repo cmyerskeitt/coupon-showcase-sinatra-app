@@ -36,7 +36,8 @@ class UsersController < ApplicationController
     end 
 
     #post signup route that receives params from user, creates user, logs them in 
-    post '/user' do 
+    post '/users' do 
+
         @user = User.create(params)
         session[:user_id] = @user.id 
         redirect "/users/#{@user.id}"
