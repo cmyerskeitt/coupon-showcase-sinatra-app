@@ -11,4 +11,9 @@ class CouponsController < ApplicationController
         erb :'/coupons/show'
     end
 
+    get '/coupons/new' do 
+        "new coupon"
+    end 
+
+
 end 

@@ -5,6 +5,6 @@ ayana = User.create(email: "ayana@ayana.com", password: "ayanapassword", name: "
 jenn= User.create(email: "jenn@jenn.com", password: "jennpasssword!", name: "Jenn Saver", image_url: "https://www.niemanlab.org/images/monique-judge.jpg", savings_goal: "4000")
 
 
-Coupon.create(brand: "Colgate", amount: 1.00, expiration: 20210101, description: "$1 off of any Colgate product", user_id: ayana.id)
+Coupon.create(brand: "Colgate", amount: 1.00, expiration: "20210101", description: "$1 off of any Colgate product", user_id: ayana.id)
 
-Coupon.create(brand: "Dove", amount: 1.50, expiration: 20210115, description: "$1.50 off of any Dove deodorant", user_id: jenn.id)
+Coupon.create(brand: "Dove", amount: 1.50, expiration: "20210115", description: "$1.50 off of any Dove deodorant", user_id: jenn.id)
