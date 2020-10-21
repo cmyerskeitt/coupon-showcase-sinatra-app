@@ -6,7 +6,8 @@ class CouponsController < ApplicationController
     end
 
     get '/coupons/:id' do
-        @coupons = Coupon.find(params[:id])
+        @coupons = Coupon.find_by(params[:id])
+        # binding.pry
         erb :'/coupons/show'
     end
 

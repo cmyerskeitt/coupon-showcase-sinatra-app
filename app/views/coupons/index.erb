@@ -1,12 +1,10 @@
 <h1> Coupon Showcase</h1>
 <% @coupons.each do |coupon| %>
-   
-    <h4><a href="/coupons/<%= coupon.id %>"><%=coupon.brand%>:  $<%=coupon.amount %> Savings </a><h4>
-       <h5>Description: <%=coupon.description%></h5>
-       <h5>Expires: <%= coupon.expiration%></h5>
-       <h5>Created At: <%= coupon.created_at %></h5>
-       <h5>Owner: <%= coupon.user.name %></h5>
-       <br>
-
+   <h4><a href="/coupons/<%= coupon.id %>"><%=coupon.brand%>:  $<%=coupon.amount %> Savings </a><h4>
+    <h5>Description: <%=coupon.description%></h5>
+    <h5>Expires: <%= coupon.expiration%></h5>
+    <h5>Created At: <%= coupon.created_at %></h5>
+    <h5>Owner: <%= coupon.user.name %></h5>
+    <br>
 <% end %>
 
