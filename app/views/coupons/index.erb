@@ -3,9 +3,6 @@
    <h4><a href="/coupons/<%= coupon.id %>"><%=coupon.brand%>:  $<%=coupon.amount %> Savings </a><h4>
     <h5>Description: <%=coupon.description%></h5>
     <h5>Expires: <%= coupon.expiration.strftime("%b %d, %Y") %></h5>
-    <h5>Created At: <%= coupon.created_at.strftime("%b %d, %Y") %></h5>
-    <h5>Showcase Number: <%=coupon.id %>
-    <h5>Owner: <%= coupon.user.name %></h5>
     <br>
 <% end %>
 
