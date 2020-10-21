@@ -6,7 +6,7 @@ class CouponsController < ApplicationController
     end
 
     get '/coupons/new' do 
-        "new coupon"
+        erb :'/coupons/new'
     end 
 
     get '/coupons/:id' do
