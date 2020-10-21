@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20201016141315) do
 
   create_table "coupons", force: :cascade do |t|
     t.string   "brand"
-    t.float    "amount"
+    t.decimal  "amount"
     t.date     "expiration"
     t.text     "description"
     t.integer  "user_id"

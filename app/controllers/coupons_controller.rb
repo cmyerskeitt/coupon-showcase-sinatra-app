@@ -1,7 +1,8 @@
 class CouponsController < ApplicationController 
 
 get '/coupons' do
-    "all coupons"
+    @coupons = Coupon.all
+    erb :'coupons/index'
 end
 
 

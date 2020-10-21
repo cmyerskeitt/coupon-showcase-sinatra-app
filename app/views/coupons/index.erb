@@ -1,0 +1,13 @@
+<h1> Coupon Showcase</h1>
+<% @coupons.each do |coupon| %>
+   
+    <h4><a href="/coupons/<%= coupon.id %>"><%=coupon.brand%></a><h4>
+       <h4>Value: $<%=coupon.amount %></h4>
+       <h4>Description: <%=coupon.description%></h4>
+       <h4>Expires: <%= coupon.expiration%></h4>
+       <h4>Created At: <%= coupon.created_at %></h4>
+       <h4>User: <%= coupon.user.name %></h4>
+       <br>
+
+<% end %>
+
