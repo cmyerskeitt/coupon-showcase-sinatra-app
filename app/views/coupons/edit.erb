@@ -1,0 +1,14 @@
+<h1>Edit Post!</h1>
+
+<form class="" action="/coupons/<%= @coupon.id %>"method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="">Brand:</label>
+    <input type="text" name="brand" value="<%= @coupon.brand %>"><br>
+    <label for="">Amount: $</label>
+    <input type="text" name="amount" value="<%= @coupon.amount %>"><br>
+    <label for="">Expiration:</label>
+    <input type="text" name="expiration" value="<%= @coupon.expiration %>">(YYYYMMDD format)<br>
+    <label for="">Description:</label>
+    <input type="text" name="description" value="<%= @coupon.description %>"><br>
+    <input type="submit" name="" value="Edit Coupon">
+</form>

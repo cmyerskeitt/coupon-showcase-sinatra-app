@@ -1,7 +1,13 @@
-<h3><%= @coupons.brand%>:  $<%= @coupons.amount %> Savings <h3>
-<h5>Description: <%= @coupons.description%></h5>
-<h5>Expires: <%= @coupons.expiration.strftime("%b %d, %Y")%></h5>
-<h5>Created At: <%= @coupons.created_at.strftime("%b %d, %Y")%></h5>
-<h5>Showcase Number: <%=@coupons.id %>
-<h5>Owner: <%= @coupons.user.name %></h5>
+<h3><%= @coupon.brand%>:  $<%= @coupon.amount %> Savings <h3>
+<h5>Description: <%= @coupon.description%></h5>
+<h5>Expires: <%= @coupon.expiration.strftime("%b %d, %Y")%></h5>
+<h5>Created At: <%= @coupon.created_at.strftime("%b %d, %Y")%></h5>
+<h5>Showcase Number: <%=@coupon.id %>
+<h5>Owner: <%= @coupon.user.name %></h5>
 
+<h5><a href="/coupons/<%= @coupon.id %>/edit">Edit Post</a></h5>
+<p>
+<form class="" action="/coupons/<%= @coupon.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" name="" value="Delete This Post">
+</form>
