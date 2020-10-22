@@ -5,7 +5,7 @@
     <label for="">Brand:</label>
     <input type="text" name="brand" value="<%= @coupon.brand %>"><br>
     <label for="">Amount: $</label>
-    <input type="text" name="amount" value="<%= @coupon.amount %>"><br>
+    <input type="text" name="amount" value="<%=sprintf("%.2f", coupon.amount) %>"><br>
     <label for="">Expiration:</label>
     <input type="text" name="expiration" value="<%= @coupon.expiration %>">(YYYYMMDD format)<br>
     <label for="">Description:</label>

@@ -1,4 +1,4 @@
-<h3><%= @coupon.brand%>:  $<%= @coupon.amount %> Savings <h3>
+<h3><%= @coupon.brand%>:  $<%= sprintf("%.2f", @coupon.amount) %> Savings <h3>
 <h5>Description: <%= @coupon.description%></h5>
 <h5>Expires: <%= @coupon.expiration.strftime("%b %d, %Y")%></h5>
 <h5>Created At: <%= @coupon.created_at.strftime("%b %d, %Y")%></h5>
