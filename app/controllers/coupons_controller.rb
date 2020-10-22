@@ -31,5 +31,10 @@ class CouponsController < ApplicationController
         redirect "/coupons/#{@coupon.id}"
     end
   
+    delete '/coupons/:id' do
+        @coupon = Coupon.find(params[:id])
+        @coupon.destroy
+        redirect '/coupons'
+    end
 
 end 
