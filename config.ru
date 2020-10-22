@@ -6,7 +6,8 @@ end
 
 #Here is where I will mount other controllers 'use'
 
-#In order to send Patch and Delete I need this code:'use Rack::MethodOverride'
+#In order to send Patch and Delete I need this code:
+Rack::MethodOverride
 use CouponsController
 use UsersController
 run ApplicationController

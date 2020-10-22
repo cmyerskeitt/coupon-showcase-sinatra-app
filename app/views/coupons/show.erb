@@ -1,7 +1,7 @@
-
 <h3><%= @coupons.brand%>:  $<%= @coupons.amount %> Savings <h3>
 <h5>Description: <%= @coupons.description%></h5>
 <h5>Expires: <%= @coupons.expiration.strftime("%b %d, %Y")%></h5>
 <h5>Created At: <%= @coupons.created_at.strftime("%b %d, %Y")%></h5>
 <h5>Showcase Number: <%=@coupons.id %>
 <h5>Owner: <%= @coupons.user.name %></h5>
+
