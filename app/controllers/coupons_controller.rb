@@ -25,6 +25,11 @@ class CouponsController < ApplicationController
         erb :'/coupons/edit'
     end 
 
+    patch '/coupons/:id' do
+        @coupon = Coupon.find(params[:id])
+        @coupon.update(brand: params[:brand], amount: params[:amount], expiration: params[:expiration], description: params[:description])
+        redirect "/coupons/#{@coupon.id}"
+    end
   
 
 end 
