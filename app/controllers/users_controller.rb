@@ -40,11 +40,17 @@ class UsersController < ApplicationController
     #post signup route that receives params from user, creates user, logs them in 
     post '/users' do 
 
-        @user = User.create(params)
-        session[:user_id] = @user.id 
-        redirect "/users/#{@user.id}"
+        @user = User.new(email: params[:email], password: params[:password], name: params[:name], image_url: params[:image_url],  
+        savings_goal: params[:savings_goal])
+        if @user.save 
+            session[:user_id] = @user.id 
+            flash[:message] = "Created new user successfully!"
+            redirect "/users/#{@user.id}"
+        else 
+            flash[:error] = "User creation failed: #{@user.errors.full_messages.to_sentence}"
+            redirect "/signup"
+        end 
     end 
-
    
     #get logout route that clears the session hash 
     get '/logout' do 
