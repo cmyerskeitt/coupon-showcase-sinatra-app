@@ -6,7 +6,12 @@ class CouponsController < ApplicationController
     end
 
     get '/coupons/new' do 
-        erb :'/coupons/new'
+        if logged_in?
+            erb :'/coupons/new'
+        else 
+            flash[:error] = " You must be logged in to create a coupon!"
+            redirect "/"
+        end 
     end 
 
     post '/coupons' do 
