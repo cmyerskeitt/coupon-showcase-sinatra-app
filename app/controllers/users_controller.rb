@@ -14,13 +14,13 @@ class UsersController < ApplicationController
        if user && user.authenticate(params[:password])
             #creating a key/value pair in the session hash using the user id to log them in 
             session[:user_id] = user.id 
-            flash[:message] = "Welcome back, #{user.name}!" 
+            flash[:message] = "Welcome back, #{user.name}! Time to save!" 
             #redirect user's profile(users show) 
             #dynamic route = id in session
             redirect "/users/#{user.id}"
        else
             #show an error message 
-            flash[:error] = "Your credentials were invalid. Try again!"
+            flash[:error] = "Invalid credentials. Try again!"
             redirect '/login'
         end 
     end
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         savings_goal: params[:savings_goal])
         if @user.save 
             session[:user_id] = @user.id 
-            flash[:message] = "Created new user successfully!"
+            flash[:message] = "New user successfully created!"
             redirect "/users/#{@user.id}"
         else 
             flash[:error] = "User creation failed: #{@user.errors.full_messages.to_sentence}"

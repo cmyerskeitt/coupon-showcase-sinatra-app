@@ -30,6 +30,7 @@
       <%if logged_in? %>
         <a href="/coupons">Coupon Showcase</a>
         <a href="/coupons/new">New Coupon</a>
+        <a href="/users/<%=current_user.id%>"> Homepage</a>
         <a href="/logout">Log Out</a>
       <% end %>
 
