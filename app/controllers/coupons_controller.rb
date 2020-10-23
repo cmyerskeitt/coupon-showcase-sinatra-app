@@ -10,13 +10,13 @@ class CouponsController < ApplicationController
     end 
 
     post '/coupons' do 
-        # if params[:brand] !="" && params[:amount] !="" && params[:expiration] !="" && params[:description] !=""
+        # if params[:brand] !="" && params[:amount] !="" && params[:expiration] !="" && params[:description] !=""/ refactored with validations
         coupon = Coupon.new(brand: params[:brand], amount: params[:amount], expiration: params[:expiration], description: params[:description], user_id: current_user.id)
         if coupon.save 
             flash[:message] = "Created coupon successfully!"
             redirect "/coupons/#{coupon.id}"
         else 
-            flash[:error] = "Coupon creation failed: Please fill in ALL inputs."
+            flash[:error] = "Coupon creation failed: #{coupon.errors.full_messages.to_sentence}"
             redirect "/coupons/new"
         end 
     end 
