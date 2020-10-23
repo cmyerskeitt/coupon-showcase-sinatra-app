@@ -34,7 +34,12 @@ class CouponsController < ApplicationController
 
     get '/coupons/:id/edit' do 
         @coupon = Coupon.find(params[:id])
-        erb :'/coupons/edit'
+        if authorize_to_edit?(@coupon)
+            erb :'/coupons/edit'
+        else
+            flash[:error] = "Not authorized to edit that post!"
+            redirect "/coupons"
+        end
     end 
 
     patch '/coupons/:id' do
