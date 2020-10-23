@@ -5,9 +5,13 @@
 <h5>Showcase Number: <%=@coupon.id %>
 <h5>Owner: <%= @coupon.user.name %></h5>
 
+<% if authorize_to_edit?(@coupon) %>
+
 <h5><a href="/coupons/<%= @coupon.id %>/edit">Edit Post</a></h5>
 <p>
 <form class="" action="/coupons/<%= @coupon.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" name="" value="Delete This Post">
 </form>
+
+<% end %>
