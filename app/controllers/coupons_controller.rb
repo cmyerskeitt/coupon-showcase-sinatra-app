@@ -10,8 +10,14 @@ class CouponsController < ApplicationController
     end 
 
     post '/coupons' do 
-        coupon = Coupon.create(brand: params[:brand], amount: params[:amount], expiration: params[:expiration], description: params[:description], user_id: current_user.id)
-        redirect "/coupons/#{coupon.id}"
+        if params[:brand] !="" && params[:amount] !="" && params[:expiration] !="" && params[:description] !=""
+            coupon = Coupon.create(brand: params[:brand], amount: params[:amount], expiration: params[:expiration], description: params[:description], user_id: current_user.id)
+            flash[:message] = "Created coupon successfully!"
+            redirect "/coupons/#{coupon.id}"
+        else 
+            flash[:error] = "Coupon creation failed: Please fill in ALL inputs."
+            redirect "/coupons/new"
+        end 
     end 
 
     get '/coupons/:id' do
