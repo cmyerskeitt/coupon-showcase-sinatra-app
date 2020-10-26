@@ -12,27 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
+
   </head>
   <body>
 
     <div class="wrapper">
-
+    <img src="/images/savingshomepage.jpg" style="width: 100%; height: 300px;">
+    
     <% if flash[:error] %>
     <h3 style="color:red;"><%= flash[:error] %></h3>
     <% end %>
 
     <% if flash[:message] %>
-   <h3 style="color:green;"><%= flash[:message] %></h3>
+   <h3 style="color:blue;"><%= flash[:message] %></h3>
     <% end %> 
-
 
     <div class="navi">
       <%if logged_in? %>
         <a href="/coupons">Coupon Showcase</a>
         <a href="/coupons/new">New Coupon</a>
-        <a href="/users/<%=current_user.id%>"> Homepage</a>
+        <a href="/users/<%=current_user.id%>"> Home</a>
         <a href="/logout">Log Out</a>
       <% end %>
+
 
         <%= yield %>
 
