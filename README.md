@@ -12,10 +12,14 @@ What you can do:
 
 Installation 
 
+```
 1. git clone git@github.com:cmyerskeitt/coupon-showcase-sinatra-app.git
 2. cd coupon_showcase_sinatra_app
 3. bundle install
 4. rake db:create && rake db:migrate
+```
 
 Run the server
+```
 shotgun
+```
