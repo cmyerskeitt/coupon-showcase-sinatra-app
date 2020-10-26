@@ -7,11 +7,11 @@
 
 <% if authorize_to_edit?(@coupon) %>
 
-<h5><a href="/coupons/<%= @coupon.id %>/edit">Edit Post</a></h5>
+<h5><a href="/coupons/<%= @coupon.id %>/edit">Edit Coupon</a></h5>
 <p>
 <form class="" action="/coupons/<%= @coupon.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" name="" value="Delete This Post">
+    <input type="submit" name="" value="Delete This Coupon">
 </form>
 
 <% end %>
