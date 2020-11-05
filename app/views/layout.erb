@@ -29,10 +29,12 @@
 
     <div class="navi">
       <%if logged_in? %>
-        <a href="/coupons">Coupon Showcase</a>
-        <a href="/coupons/new">New Coupon</a>
-        <a href="/coupons/savings">Big Savings</a>
         <a href="/users/<%=current_user.id%>"> Home</a>
+        <br>
+        <a href="/coupons">Coupon Showcase</a>
+        <a href="/coupons/savings">Big Savings</a>
+        <a href="/coupons/new">New Coupon</a>
+        <br>
         <a href="/logout">Log Out</a>
       <% end %>
 
