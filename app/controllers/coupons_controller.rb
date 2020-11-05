@@ -27,10 +27,7 @@ class CouponsController < ApplicationController
     end 
 
     get '/coupons/savings' do 
-        @coupon = Coupon.all.select do |coupon| 
-            coupon.amount >= 1.00
-        end
-        #binding.pry 
+        @coupon = Coupon.all.select {|coupon| coupon.amount >= 1.00}
         erb :'/coupons/savings'
     end 
 
