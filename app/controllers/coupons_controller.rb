@@ -15,7 +15,7 @@ class CouponsController < ApplicationController
     end 
 
     post '/coupons' do 
-        # if params[:brand] !="" && params[:amount] !="" && params[:expiration] !="" && params[:description] !=""/ refactored with validations
+       
         coupon = Coupon.new(brand: params[:brand], amount: params[:amount], expiration: params[:expiration], description: params[:description], user_id: current_user.id)
         if coupon.save 
             flash[:message] = "Coupon successfully created!"
@@ -26,11 +26,21 @@ class CouponsController < ApplicationController
         end 
     end 
 
+    get '/coupons/savings' do 
+        @coupon = Coupon.all.select do |coupon| 
+            coupon.amount >= 1.00
+        end
+        #binding.pry 
+        erb :'/coupons/savings'
+    end 
+
     get '/coupons/:id' do
         @coupon = Coupon.find(params[:id])
         # binding.pry
         erb :'/coupons/show'
     end
+
+  
 
     get '/coupons/:id/edit' do 
         @coupon = Coupon.find(params[:id])
@@ -53,5 +63,6 @@ class CouponsController < ApplicationController
         @coupon.destroy
         redirect '/coupons'
     end
+
 
 end 

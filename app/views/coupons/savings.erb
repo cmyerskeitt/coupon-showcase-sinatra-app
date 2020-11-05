@@ -1,0 +1,12 @@
+<h1> Big Savings!</h1>
+<%binding.pry%>
+<%# <h2><% @coupons.each do |coupon| %></h2>
+   <h4><a href="/coupons/<%= coupon.id %>"<%=coupon.brand%>:  $<%= sprintf("%.2f", coupon.amount) %> Savings </a></h4>
+    <h5>Description: <%=coupon.description%></h5>
+    <h5>Expires: <%= coupon.expiration.strftime("%b %d, %Y") %></h5>
+    <br>
+<% end %> %>
+
+
+Build out new route to show coupons over $1
+

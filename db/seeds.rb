@@ -1,5 +1,3 @@
-#Here is where I will write the seed data for my program 
-
 ayana = User.create(email: "ayana@ayana.com", password: "ayanapassword", name: "Ayana Miser", image_url: "https://media.gettyimages.com/photos/beautiful-girl-with-curly-hairstyle-picture-id1180484935?s=612x612", savings_goal: "3000")
 
 jenn= User.create(email: "jenn@jenn.com", password: "jennpasssword!", name: "Jenn Saver", image_url: "https://www.niemanlab.org/images/monique-judge.jpg", savings_goal: "4000")
